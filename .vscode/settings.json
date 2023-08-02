@@ -1,22 +1,7 @@
-// .vscode/settings.json
 {
   "editor.wordWrap": "on",
-  "eslint.enable": true,
-  "window.zoomLevel": 0,
-  "files.trimTrailingWhitespace": true,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
-  "prettier.eslintIntegration": true,
-  "prettier.disableLanguages": [],
-  "eslint.autoFixOnSave": true,
-  "editor.insertSpaces": true,
-  "editor.formatOnSave": true, // only if you want auto      //fomattting on saving the file
-  "editor.detectIndentation": true,
-  "editor.tabSize": 2,
-  "editor.formatOnPaste": false,
-  "editor.formatOnType": true,
-  "editor.renderControlCharacters": true,
-  "editor.renderWhitespace": "all",
+  "editor.formatOnSave": true,
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
     "**/node_modules": true,
     ".gitignore": true,
@@ -29,20 +14,6 @@
     "build": true,
     "config": true
   },
-  "eslint.validate": [
-    {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "html",
-      "autoFix": true
-    },
-    {
-      "language": "javascript",
-      "autoFix": true
-    }
-  ],
   "attrsSorter.order": [
     "is",
     "v-for",
@@ -83,10 +54,16 @@
     "aria-.+",
     "$unknown$"
   ],
-  "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }
