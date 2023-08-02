@@ -16,11 +16,11 @@ const email = ref("");
 const password = ref("");
 
 const login = async () => {
-  authError.value = "error he!" + email.value;
+  // authError.value = "error he!" + email.value;
   loading.value = true;
   setTimeout(() => {
-    // navigateTo("/");
-  }, 3000);
+    navigateTo("/");
+  }, 1000);
   /*  const { error }  = await client.auth.signInWithPassword({
     email: email.value,
     password: password.value
