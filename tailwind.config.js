@@ -10,6 +10,15 @@ module.exports = {
     "./app.vue",
   ],
   theme: {
+    /* fontSize: {
+      sm: "0.8rem",
+      base: "1rem",
+      xl: "1.25rem",
+      "2xl": "1.563rem",
+      "3xl": "1.953rem",
+      "4xl": "2.441rem",
+      "5xl": "3.052rem",
+    }, */
     container: {
       center: true,
       padding: {
@@ -139,10 +148,9 @@ module.exports = {
       fontFamily: {
         Inter: ["Inter", "sans-serif"],
         Rubik: ["Rubik", "sans-serif"],
-        sans: [
-          "Rubik",
-          "sans-serif"
-        ]
+        Jakarta: ["'Plus Jakarta Sans'", "sans-serif"],
+        // sans: ["'Plus Jakarta Sans'", "sans-serif"],
+        sans: ["Rubik", "sans-serif"],
       },
       boxShadow: {
         base: "0px 0px 1px rgba(40, 41, 61, 0.08), 0px 0.5px 2px rgba(96, 97, 112, 0.16)",
@@ -182,5 +190,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};

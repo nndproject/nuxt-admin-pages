@@ -34,14 +34,14 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
     <div class="min-h-full">
       <Navbar />
       <div
-        class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
+        class="relative isolate flex items-center gap-x-6 overflow-hidden bg-white-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
       >
         <div
-          class="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+          class="absolute left-[max(-7rem)] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
           aria-hidden="true"
         >
           <div
-            class="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+            class="aspect-[577/310] w-[56.0625rem] bg-gradient-to-r from-[#ff006a] to-[#1100ff]"
             style="
               clip-path: polygon(
                 74.8% 41.9%,
@@ -65,11 +65,11 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
           />
         </div>
         <div
-          class="absolute left-[max(45rem,calc(50%+8rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
+          class="absolute left-[max(15rem,calc(40%+1rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
           aria-hidden="true"
         >
           <div
-            class="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+            class="aspect-[577/310] w-[65rem] bg-gradient-to-r from-[#ff006a] to-[#1100ff]"
             style="
               clip-path: polygon(
                 74.8% 41.9%,
@@ -93,7 +93,7 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
           />
         </div>
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-          <p class="text-sm leading-6 text-gray-900">
+          <p class="text-sm leading-6 text-white">
             <strong class="font-semibold">ARION INDONESIA</strong
             ><svg
               viewBox="0 0 2 2"
@@ -120,13 +120,13 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
         </div>
       </div>
 
-      <header class="bg-white shadow">
+      <!--    <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900">
             Dashboard
           </h1>
         </div>
-      </header>
+      </header> -->
 
       <slot />
     </div>

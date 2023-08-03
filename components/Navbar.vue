@@ -9,7 +9,11 @@ import {
   MenuItems,
 } from "@headlessui/vue";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/vue/24/outline";
-import { ChevronDownIcon } from "@heroicons/vue/20/solid";
+import {
+  ChevronDownIcon,
+  SquaresPlusIcon,
+  QueueListIcon,
+} from "@heroicons/vue/20/solid";
 
 const user = {
   name: "Tom Cook",
@@ -19,7 +23,6 @@ const user = {
 };
 const navigation = [
   { name: "Dashboard", href: "/", current: false },
-  { name: "Master Certificate", href: "/master-cert/create", current: false },
   { name: "Login Pages", href: "/login", current: false },
 ];
 const userNavigation = [
@@ -29,8 +32,12 @@ const userNavigation = [
 ];
 </script>
 <template>
-  <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+  <Disclosure
+    as="nav"
+    class="sticky top-0 z-10 bg-gray-700 hover:shadow-2xl hover:shadow-purple-300/50"
+    v-slot="{ open }"
+  >
+    <div class="mx-auto px-8 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <div class="flex-shrink-0">
@@ -45,23 +52,18 @@ const userNavigation = [
               <NuxtLink
                 v-for="item in navigation"
                 :to="item.href"
-                :class="[
-                  item.current
-                    ? 'bg-gray-900 text-white'
-                    : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                  'rounded-md px-3 py-2 text-sm font-medium',
-                ]"
+                class="text-gray-300"
                 :aria-current="item.current ? 'page' : undefined"
                 >{{ item.name }}</NuxtLink
               >
               <Menu as="div" class="relative inline-block text-left">
                 <div>
                   <MenuButton
-                    class="inline-flex w-full justify-center px-3 py-2 text-sm font-semibold text-gray-300 hover:text-white rounded-md px-3 py-2"
+                    class="inline-flex w-full justify-center text-gray-300 hover:text-white rounded-md px-3 py-2"
                   >
-                    Options
+                    Master Certificate
                     <ChevronDownIcon
-                      class="-mr-1 h-5 w-5 text-gray-300 hover:text-white"
+                      class="-mr-1 h-6 w-5 text-gray-300 hover:text-white"
                       aria-hidden="true"
                     />
                   </MenuButton>
@@ -76,60 +78,36 @@ const userNavigation = [
                   leave-to-class="transform opacity-0 scale-95"
                 >
                   <MenuItems
-                    class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                    class="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg px-2 focus:outline-none"
                   >
                     <div class="py-1">
                       <MenuItem v-slot="{ active }">
-                        <a
-                          href="#"
-                          :class="[
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm',
-                          ]"
-                          >Account settings</a
+                        <NuxtLink
+                          to="/master-cert/create"
+                          class="group flex w-full items-center rounded-md px-2 py-2 text-sm"
                         >
+                          <SquaresPlusIcon
+                            class="mr-2 h-5 w-5 text-purple-600"
+                            aria-hidden="true"
+                          />
+                          Tambah Data
+                        </NuxtLink>
                       </MenuItem>
                       <MenuItem v-slot="{ active }">
-                        <a
-                          href="#"
+                        <NuxtLink
+                          to="/master-cert"
                           :class="[
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm',
+                            active ? 'submenu-active' : 'text-gray-700',
+                            'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                           ]"
-                          >Support</a
                         >
+                          <QueueListIcon
+                            class="mr-2 h-5 w-5 text-purple-600"
+                            aria-hidden="true"
+                          />
+                          List Data
+                        </NuxtLink>
                       </MenuItem>
-                      <MenuItem v-slot="{ active }">
-                        <a
-                          href="#"
-                          :class="[
-                            active
-                              ? 'bg-gray-100 text-gray-900'
-                              : 'text-gray-700',
-                            'block px-4 py-2 text-sm',
-                          ]"
-                          >License</a
-                        >
-                      </MenuItem>
-                      <form method="POST" action="#">
-                        <MenuItem v-slot="{ active }">
-                          <button
-                            type="submit"
-                            :class="[
-                              active
-                                ? 'bg-gray-100 text-gray-900'
-                                : 'text-gray-700',
-                              'block w-full px-4 py-2 text-left text-sm',
-                            ]"
-                          >
-                            Sign out
-                          </button>
-                        </MenuItem>
-                      </form>
                     </div>
                   </MenuItems>
                 </transition>
@@ -206,30 +184,10 @@ const userNavigation = [
         </div>
       </div>
     </div>
-
-    <!-- <DisclosurePanel class="md:hidden">
-        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-          <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</DisclosureButton>
-        </div>
-        <div class="border-t border-gray-700 pb-3 pt-4">
-          <div class="flex items-center px-5">
-            <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" />
-            </div>
-            <div class="ml-3">
-              <div class="text-base font-medium leading-none text-white">{{ user.name }}</div>
-              <div class="text-sm font-medium leading-none text-gray-400">{{ user.email }}</div>
-            </div>
-            <button type="button" class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-              <span class="absolute -inset-1.5" />
-              <span class="sr-only">View notifications</span>
-              <BellIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div class="mt-3 space-y-1 px-2">
-            <DisclosureButton v-for="item in userNavigation" :key="item.name" as="a" :href="item.href" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">{{ item.name }}</DisclosureButton>
-          </div>
-        </div>
-      </DisclosurePanel> -->
   </Disclosure>
 </template>
+<style lang="postcss" scoped>
+.router-link-active.group {
+  @apply text-purple-700;
+}
+</style>

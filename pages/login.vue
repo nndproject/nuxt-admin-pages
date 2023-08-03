@@ -1,8 +1,9 @@
 <script setup lang="ts">
 definePageMeta({
-  pageTransition: {
-    name: "rotate",
-  },
+  /* layoutTransition: {
+    name: "auth",
+    mode: "out-in",
+  }, */
   layout: "authlayout",
 });
 
@@ -45,8 +46,11 @@ const clearError = () => {
 </script>
 <template>
   <div
-    class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
+    class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 md:h-screen md:items-center"
   >
+    <!-- <div
+    class="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8"
+  > -->
     <div class="sm:mx-auto sm:w-full sm:max-w-sm">
       <img
         class="mx-auto h-10 w-auto"
