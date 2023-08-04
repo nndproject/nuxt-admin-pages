@@ -1,5 +1,6 @@
 <script setup>
 import { XMarkIcon } from "@heroicons/vue/20/solid";
+import { SignalIcon } from "@heroicons/vue/24/solid";
 </script>
 <template>
   <main>
@@ -92,21 +93,16 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
             "
           />
         </div>
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
+        <div class="flex flex-wrap items-center gap-x-1 gap-y-2">
+          <SignalIcon class="h-5 text-white" aria-hidden="true" />
           <p class="text-sm leading-6 text-white">
-            <strong class="font-semibold">ARION INDONESIA</strong
-            ><svg
-              viewBox="0 0 2 2"
-              class="mx-2 inline h-0.5 w-0.5 fill-current"
-              aria-hidden="true"
-            >
-              <circle cx="1" cy="1" r="1" /></svg
-            >admin page menggunakan nuxt js. harus jadi dan bisa
+            <strong class="font-bold">INFORMASI LELANG : </strong> Paket Belanja
+            Jasa Konsultan Pengawasan Pembangunan Pagar SMP (BHP)
           </p>
           <a
             href="#"
             class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
-            >Register now <span aria-hidden="true">&rarr;</span></a
+            >Buka Lelang <span aria-hidden="true">&rarr;</span></a
           >
         </div>
         <div class="flex flex-1 justify-end">
@@ -115,19 +111,19 @@ import { XMarkIcon } from "@heroicons/vue/20/solid";
             class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
           >
             <span class="sr-only">Dismiss</span>
-            <XMarkIcon class="h-5 w-5 text-gray-900" aria-hidden="true" />
+            <XMarkIcon class="h-6 w-6 text-white" aria-hidden="true" />
           </button>
         </div>
       </div>
 
       <header class="bg-white shadow mb-14">
-        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <!-- <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"> -->
+        <div class="mx-auto px-4 py-4 sm:px-6 lg:px-8">
           <h1 class="text-3xl font-bold tracking-tight text-gray-900">
             Dashboard
           </h1>
         </div>
       </header>
-
       <slot />
     </div>
   </main>

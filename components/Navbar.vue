@@ -108,6 +108,21 @@ const userNavigation = [
                           List Data
                         </NuxtLink>
                       </MenuItem>
+                      <MenuItem v-slot="{ active }">
+                        <NuxtLink
+                          to="/master-cert/table"
+                          :class="[
+                            active ? 'submenu-active' : 'text-gray-700',
+                            'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                          ]"
+                        >
+                          <QueueListIcon
+                            class="mr-2 h-5 w-5 text-purple-600"
+                            aria-hidden="true"
+                          />
+                          Table Data
+                        </NuxtLink>
+                      </MenuItem>
                     </div>
                   </MenuItems>
                 </transition>

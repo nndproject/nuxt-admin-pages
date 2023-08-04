@@ -1,5 +1,5 @@
 {
-  "editor.wordWrap": "on",
+  "editor.wordWrap": "On",
   "editor.formatOnSave": true,
   // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
